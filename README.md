@@ -9,5 +9,5 @@
 # Decrypt File
 ./crypcli.py -decf FILE
 
-Setup:
+# Setup
 pip3 install requirements.txt
