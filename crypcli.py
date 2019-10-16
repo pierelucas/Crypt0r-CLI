@@ -34,7 +34,12 @@ import string
 import random
 from colorama import Fore, Style
 from cryptography.fernet import Fernet
-from argparse_shadow import ArgumentParser
+from argparse import ArgumentParser
+
+# Use the import below when argparse kicks an exception
+# Rename your argparse.py in argparse_shadow.py first. The file is in your Python Folder
+# This Problem often happens under conda or venv env.
+#from argparse_shadow import ArgumentParser
 
 banner_txt = """
    ______                 __  ____             ________    ____
