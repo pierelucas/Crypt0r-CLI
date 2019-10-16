@@ -83,12 +83,14 @@ class Crypt0rCLI():
         return "".join(random.choice(letters) for i in range(stringlen))
 
     def startup_check(self):
+        print(Fore.GREEN + "Startup Check started ..." + Style.RESET_ALL)
         if os.path.isfile("key.crypt"):
             _true = self.read_key()
             if _true: print("Key found » Key loaded")
         else:
             _true = self.gen_key()
             if _true: print("No key found » Key generated")
+        print(Fore.GREEN + "Startup Succesfully" + Style.RESET_ALL)
         return True
 
     def gen_key(self):
@@ -129,12 +131,12 @@ class Crypt0rCLI():
 
     def run(self):
         startup_true = self.startup_check()
-        if startup_true: print(Fore.GREEN + "Startup Succesfully" + Style.RESET_ALL)
+        if startup_true: pass
         else: sys.exit(0)
 
         if args.gen:
-            _true, backup_path_ = self.gen_key()
-            if _true:
+            gen_key_true, backup_path_ = self.gen_key()
+            if gen_key_true:
                 print("New Key Generated | Previous Key: " + Fore.CYAN + backup_path_ + Style.RESET_ALL)
                 sys.exit(0)
         else: pass
@@ -148,7 +150,7 @@ class Crypt0rCLI():
             dec_true = self.dec_file()
             if dec_true: print(self.out(mode='dec'))
         else:
-            print(Fore.RED + "Not ENOUGH Args!" + Style.RESET_ALL)
+            print(Fore.RED + "not enough ARGS ... NOOB!" + Style.RESET_ALL)
             sys.exit(0)
 
 
