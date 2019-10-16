@@ -135,7 +135,7 @@ class Crypt0rCLI():
         if args.gen:
             _true, backup_path_ = self.gen_key()
             if _true:
-                print("New Key Generated | Backup of old Key under " + Fore.CYAN + backup_path_ + Style.RESET_ALL)
+                print("New Key Generated | Previous Key: " + Fore.CYAN + backup_path_ + Style.RESET_ALL)
                 sys.exit(0)
         else: pass
 
