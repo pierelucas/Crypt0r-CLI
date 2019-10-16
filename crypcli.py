@@ -119,7 +119,7 @@ class Crypt0rCLI():
         encrypted_data = self.crypt.encrypt(file_data)
         with open(self.file_path, 'wb') as f:
             f.write(encrypted_data)
-            return True
+        return True
 
     def dec_file(self):
         with open(self.file_path, 'rb') as f:
@@ -127,7 +127,7 @@ class Crypt0rCLI():
         decrypted_data = self.crypt.decrypt(file_data)
         with open(self.file_path, 'wb') as f:
             f.write(decrypted_data)
-            return True
+        return True
 
     def run(self):
         startup_true = self.startup_check()
